@@ -4,8 +4,8 @@
 In Prometheus, alerts are triggered based on defined alerting rules that monitor certain conditions or thresholds in your metrics data. When these conditions are met, Prometheus generates alerts and sends them to an alert manager, which then takes further actions, such as sending notifications to designated recipients. Here's a general overview of the process to trigger a Prometheus alert:
 
 * Define Alerting Rules: In your Prometheus configuration, you define alerting rules using PromQL (Prometheus Query Language). These rules specify the conditions that need to be met for an alert to be triggered. For example, you might define a rule to trigger an alert when the CPU usage of a server exceeds a certain threshold for a specified duration.
-    * Open your Prometheus configuration file (prometheus.yml) for editing.
-    * Define alerting rules using PromQL syntax. Each rule consists of a name, condition, labels, and annotations. For example:
+   * Open your Prometheus configuration file (prometheus.yml) for editing.
+   * Define alerting rules using PromQL syntax. Each rule consists of a name, condition, labels, and annotations. For example:
     ```shell
     rule_files:
       - alert.rules.yml
