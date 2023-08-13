@@ -59,3 +59,40 @@ PromQL (Prometheus Query Language) in Prometheus uses a limited set of data type
 *Matrix: A matrix is a two-dimensional data structure representing a range of data over time. It's used in range-based queries, where you specify a time window and get multiple time series for a given metric and set of labels.
 
 ## 5- How To calculate the average request duration over the last 5 minutes from a histogram ?
+you can calculate the average request duration over the last 5 minutes from a histogram using the histogram_quantile function along with the rate function.
+
+make sure you have a histogram metric that records the request durations. 
+
+Use the histogram_quantile function to calculate the quantile value of the histogram. The quantile value represents the duration below which a certain percentage of requests fall. For average calculation, you can use the 0.5 quantile, which is equivalent to the median.
+
+To calculate the average duration, you'll use the rate function to calculate the rate of requests over the last 5 minutes, and then multiply it by the median duration obtained from step 2. This will give you an estimate of the average request duration over the last 5 minutes.
+
+## 6- What is Thanos Prometheus?
+Thanos is an open-source project that extends the capabilities of Prometheus, a popular monitoring and alerting system. Thanos enhances Prometheus by providing a scalable, highly available, and durable solution for storing, querying, and visualizing Prometheus metric data over extended periods of time. It is particularly useful for organizations with large amounts of metric data that need to be retained and queried over extended time frames.
+
+## 7- What is promtool ?
+promtool is a command-line utility that comes with Prometheus, the popular open-source monitoring and alerting system. It is designed to help you verify and validate your Prometheus configuration files and rules, ensuring that they are correctly formatted and compliant with Prometheus's requirements. promtool is an essential tool for Prometheus administrators and users to ensure the correctness of their configuration and rules before deploying them.
+
+## 8- What types of Monitoring can be done via Grafana?
+* Infrastructure Monitoring: Grafana can be used to monitor the health, performance, and resource utilization of your infrastructure components such as servers, virtual machines, containers, and network devices. It can display metrics like CPU usage, memory utilization, disk space, network traffic, and more.
+
+* Application Performance Monitoring (APM): Grafana can integrate with APM tools like Prometheus, Jaeger, and Zipkin to visualize and analyze application-specific metrics and traces. This includes monitoring response times, error rates, request throughput, and service dependencies.
+
+* Database Monitoring: Grafana supports various database systems like MySQL, PostgreSQL, MongoDB, and InfluxDB. It can be used to monitor database performance metrics, query performance, connection statistics, and more.
+
+* Cloud Services Monitoring: Grafana can connect to cloud monitoring services like Amazon CloudWatch, Google Cloud Monitoring, and Azure Monitor. This enables you to monitor cloud resources, services, and metrics within your cloud environment.
+
+* Network Monitoring: Grafana can visualize network-related metrics such as bandwidth usage, latency, packet loss, and more. It can integrate with network monitoring tools like SNMP, NetFlow, and sFlow.
+
+* Container Orchestration: Grafana is commonly used to monitor containerized applications managed by orchestration platforms like Kubernetes, Docker Swarm, and OpenShift. It can display metrics related to container performance, resource allocation, and deployment status.
+
+* IoT Device Monitoring: Grafana can be used to monitor IoT devices and sensors by integrating with data sources that collect and store IoT-related data. This can include temperature, humidity, pressure, and other environmental metrics.
+
+* Security Monitoring: Grafana can help monitor security-related metrics and events, including authentication logs, firewall activity, intrusion detection system (IDS) alerts, and more.
+
+*  Custom Application Metrics: You can instrument your applications to send custom metrics to Grafana using APIs or libraries. This allows you to monitor specific business metrics and application performance indicators tailored to your needs.
+
+* Business Process Monitoring: Grafana can also be used to monitor key performance indicators (KPIs) and business process metrics to gain insights into business operations and performance.
+
+## 9- Can we see different Servers CPU comparison in Grafana?
+Yes, we can use Grafana to compare the CPU usage of different servers by creating a dashboard that displays CPU metrics from multiple servers side by side.
